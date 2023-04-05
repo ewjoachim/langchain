@@ -1,7 +1,8 @@
 """Wrapper around in-memory storage."""
 from __future__ import annotations
 
-from typing import Any, Dict, List, Literal, Optional
+from typing import Any, Dict, List, Optional
+from typing_extensions import Literal
 
 from langchain.embeddings.base import Embeddings
 from langchain.vectorstores.docarray.base import (

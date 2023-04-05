@@ -11,14 +11,13 @@ from typing import (
     Collection,
     Iterable,
     List,
-    Literal,
     Optional,
     Sequence,
     Type,
     TypeVar,
     Union,
 )
-
+from typing_extensions import Literal
 from langchain.docstore.document import Document
 from langchain.schema import BaseDocumentTransformer
 

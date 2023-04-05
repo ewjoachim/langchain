@@ -11,12 +11,12 @@ from typing import (
     Dict,
     Iterable,
     List,
-    Literal,
     Mapping,
     Optional,
     Tuple,
     Type,
 )
+from typing_extensions import Literal
 
 import numpy as np
 from pydantic import BaseModel, root_validator

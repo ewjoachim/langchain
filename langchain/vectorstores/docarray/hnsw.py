@@ -1,7 +1,8 @@
 """Wrapper around Hnswlib store."""
 from __future__ import annotations
 
-from typing import Any, List, Literal, Optional
+from typing import Any, List, Optional
+from typing_extensions import Literal
 
 from langchain.embeddings.base import Embeddings
 from langchain.vectorstores.docarray.base import (
