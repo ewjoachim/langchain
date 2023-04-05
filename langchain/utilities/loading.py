@@ -27,7 +27,10 @@ def try_load_from_hub(
     **kwargs: Any,
 ) -> Optional[T]:
     """Load configuration from hub.  Returns None if path is not a hub path."""
-    if not isinstance(path, str) or not (match := HUB_PATH_RE.match(path)):
+    if not isinstance(path, str):
+        return None
+    match = HUB_PATH_RE.match(path)
+    if not match:
         return None
     ref, remote_path_str = match.groups()
     ref = ref[1:] if ref else DEFAULT_REF

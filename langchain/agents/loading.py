@@ -84,9 +84,10 @@ def load_agent_from_config(
 
 def load_agent(path: Union[str, Path], **kwargs: Any) -> Agent:
     """Unified method for loading a agent from LangChainHub or local fs."""
-    if hub_result := try_load_from_hub(
+    hub_result = try_load_from_hub(
         path, _load_agent_from_file, "agents", {"json", "yaml"}
-    ):
+    )
+    if hub_result:
         return hub_result
     else:
         return _load_agent_from_file(path, **kwargs)

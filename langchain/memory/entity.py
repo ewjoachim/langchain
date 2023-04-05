@@ -138,7 +138,10 @@ class RedisEntityStore(BaseEntityStore):
         # iterate a list in batches of size batch_size
         def batched(iterable: Iterable[Any], batch_size: int) -> Iterable[Any]:
             iterator = iter(iterable)
-            while batch := list(islice(iterator, batch_size)):
+            while True:
+                batch = list(islice(iterator, batch_size))
+                if not batch:
+                    break
                 yield batch
 
         for keybatch in batched(

@@ -55,9 +55,9 @@ class SitemapLoader(WebBaseLoader):
 
             els.append(
                 {
-                    tag: prop.text
+                    tag: url.find(tag).text
                     for tag in ["loc", "lastmod", "changefreq", "priority"]
-                    if (prop := url.find(tag))
+                    if url.find(tag)
                 }
             )
 
