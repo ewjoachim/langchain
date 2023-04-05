@@ -37,7 +37,8 @@ from langchain.llms.nlpcloud import NLPCloud
 from langchain.llms.octoai_endpoint import OctoAIEndpoint
 from langchain.llms.openai import AzureOpenAI, OpenAI, OpenAIChat
 from langchain.llms.openllm import OpenLLM
-from langchain.llms.openlm import OpenLM
+
+# from langchain.llms.openlm import OpenLM
 from langchain.llms.petals import Petals
 from langchain.llms.pipelineai import PipelineAI
 from langchain.llms.predictionguard import PredictionGuard
@@ -90,7 +91,7 @@ __all__ = [
     "OpenAI",
     "OpenAIChat",
     "OpenLLM",
-    "OpenLM",
+    # "OpenLM",
     "Petals",
     "PipelineAI",
     "PredictionGuard",
@@ -142,7 +143,7 @@ type_to_cls_dict: Dict[str, Type[BaseLLM]] = {
     "mosaic": MosaicML,
     "nlpcloud": NLPCloud,
     "openai": OpenAI,
-    "openlm": OpenLM,
+    # "openlm": OpenLM,
     "petals": Petals,
     "pipelineai": PipelineAI,
     "replicate": Replicate,

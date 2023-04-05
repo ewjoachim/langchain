@@ -1,5 +1,5 @@
 """Wrapper around HuggingFace Pipeline API to run on self-hosted remote hardware."""
-import importlib.util
+# import importlib.util
 import logging
 from typing import Any, Callable, List, Mapping, Optional
 
@@ -78,23 +78,23 @@ def _load_transformer(
             f"Could not load the {task} model due to missing dependencies."
         ) from e
 
-    if importlib.util.find_spec("torch") is not None:
-        import torch
+    # if importlib.util.find_spec("torch") is not None:
+    #     import torch
 
-        cuda_device_count = torch.cuda.device_count()
-        if device < -1 or (device >= cuda_device_count):
-            raise ValueError(
-                f"Got device=={device}, "
-                f"device is required to be within [-1, {cuda_device_count})"
-            )
-        if device < 0 and cuda_device_count > 0:
-            logger.warning(
-                "Device has %d GPUs available. "
-                "Provide device={deviceId} to `from_model_id` to use available"
-                "GPUs for execution. deviceId is -1 for CPU and "
-                "can be a positive integer associated with CUDA device id.",
-                cuda_device_count,
-            )
+    #     cuda_device_count = torch.cuda.device_count()
+    #     if device < -1 or (device >= cuda_device_count):
+    #         raise ValueError(
+    #             f"Got device=={device}, "
+    #             f"device is required to be within [-1, {cuda_device_count})"
+    #         )
+    #     if device < 0 and cuda_device_count > 0:
+    #         logger.warning(
+    #             "Device has %d GPUs available. "
+    #             "Provide device={deviceId} to `from_model_id` to use available"
+    #             "GPUs for execution. deviceId is -1 for CPU and "
+    #             "can be a positive integer associated with CUDA device id.",
+    #             cuda_device_count,
+    #         )
 
     pipeline = hf_pipeline(
         task=task,

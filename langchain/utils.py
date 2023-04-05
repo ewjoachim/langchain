@@ -1,9 +1,11 @@
 """Generic utility functions."""
 import contextlib
 import datetime
-import importlib
+
+# import importlib
 import os
-from importlib.metadata import version
+
+# from importlib.metadata import version
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
 from packaging.version import parse

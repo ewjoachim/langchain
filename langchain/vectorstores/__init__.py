@@ -21,16 +21,18 @@ from langchain.vectorstores.elastic_vector_search import (
 )
 from langchain.vectorstores.faiss import FAISS
 from langchain.vectorstores.hologres import Hologres
-from langchain.vectorstores.lancedb import LanceDB
 from langchain.vectorstores.marqo import Marqo
 from langchain.vectorstores.matching_engine import MatchingEngine
+
+# from langchain.vectorstores.lancedb import LanceDB
 from langchain.vectorstores.milvus import Milvus
 from langchain.vectorstores.mongodb_atlas import MongoDBAtlasVectorSearch
 from langchain.vectorstores.myscale import MyScale, MyScaleSettings
 from langchain.vectorstores.opensearch_vector_search import OpenSearchVectorSearch
 from langchain.vectorstores.pgembedding import PGEmbedding
 from langchain.vectorstores.pgvector import PGVector
-from langchain.vectorstores.pinecone import Pinecone
+
+# from langchain.vectorstores.pinecone import Pinecone
 from langchain.vectorstores.qdrant import Qdrant
 from langchain.vectorstores.redis import Redis
 from langchain.vectorstores.rocksetdb import Rockset
@@ -65,7 +67,7 @@ __all__ = [
     "FAISS",
     "PGEmbedding",
     "Hologres",
-    "LanceDB",
+    # "LanceDB",
     "MatchingEngine",
     "Marqo",
     "Milvus",
@@ -81,7 +83,7 @@ __all__ = [
     "MyScale",
     "MyScaleSettings",
     "OpenSearchVectorSearch",
-    "Pinecone",
+    # "Pinecone",
     "Qdrant",
     "Redis",
     "Rockset",

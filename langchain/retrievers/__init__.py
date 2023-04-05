@@ -15,8 +15,9 @@ from langchain.retrievers.merger_retriever import MergerRetriever
 from langchain.retrievers.metal import MetalRetriever
 from langchain.retrievers.milvus import MilvusRetriever
 from langchain.retrievers.multi_query import MultiQueryRetriever
-from langchain.retrievers.pinecone_hybrid_search import PineconeHybridSearchRetriever
 from langchain.retrievers.pubmed import PubMedRetriever
+
+# from langchain.retrievers.pinecone_hybrid_search import PineconeHybridSearchRetriever
 from langchain.retrievers.remote_retriever import RemoteLangChainRetriever
 from langchain.retrievers.self_query.base import SelfQueryRetriever
 from langchain.retrievers.svm import SVMRetriever
@@ -27,8 +28,9 @@ from langchain.retrievers.time_weighted_retriever import (
 from langchain.retrievers.vespa_retriever import VespaRetriever
 from langchain.retrievers.weaviate_hybrid_search import WeaviateHybridSearchRetriever
 from langchain.retrievers.wikipedia import WikipediaRetriever
-from langchain.retrievers.zep import ZepRetriever
 from langchain.retrievers.zilliz import ZillizRetriever
+
+# from langchain.retrievers.zep import ZepRetriever
 
 __all__ = [
     "AmazonKendraRetriever",
@@ -45,8 +47,8 @@ __all__ = [
     "MetalRetriever",
     "MilvusRetriever",
     "MultiQueryRetriever",
-    "PineconeHybridSearchRetriever",
     "PubMedRetriever",
+    # "PineconeHybridSearchRetriever",
     "RemoteLangChainRetriever",
     "SVMRetriever",
     "SelfQueryRetriever",
@@ -55,7 +57,7 @@ __all__ = [
     "VespaRetriever",
     "WeaviateHybridSearchRetriever",
     "WikipediaRetriever",
-    "ZepRetriever",
     "ZillizRetriever",
     "DocArrayRetriever",
+    # "ZepRetriever",
 ]
