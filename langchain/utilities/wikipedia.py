@@ -52,8 +52,10 @@ class WikipediaAPIWrapper(BaseModel):
         page_titles = self.wiki_client.search(query[:WIKIPEDIA_MAX_QUERY_LENGTH])
         summaries = []
         for page_title in page_titles[: self.top_k_results]:
-            if wiki_page := self._fetch_page(page_title):
-                if summary := self._formatted_page_summary(page_title, wiki_page):
+            wiki_page = self._fetch_page(page_title)
+            if wiki_page:
+                summary = self._formatted_page_summary(page_title, wiki_page)
+                if summary:
                     summaries.append(summary)
         if not summaries:
             return "No good Wikipedia Search Result was found"
@@ -112,7 +114,9 @@ class WikipediaAPIWrapper(BaseModel):
         page_titles = self.wiki_client.search(query[:WIKIPEDIA_MAX_QUERY_LENGTH])
         docs = []
         for page_title in page_titles[: self.top_k_results]:
-            if wiki_page := self._fetch_page(page_title):
-                if doc := self._page_to_document(page_title, wiki_page):
+            wiki_page = self._fetch_page(page_title)
+            if wiki_page:
+                doc = self._page_to_document(page_title, wiki_page)
+                if doc:
                     docs.append(doc)
         return docs

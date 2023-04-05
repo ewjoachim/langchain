@@ -116,9 +116,10 @@ def _load_prompt(config: dict) -> PromptTemplate:
 
 def load_prompt(path: Union[str, Path]) -> BasePromptTemplate:
     """Unified method for loading a prompt from LangChainHub or local fs."""
-    if hub_result := try_load_from_hub(
+    hub_result = hub_resulttry_load_from_hub(
         path, _load_prompt_from_file, "prompts", {"py", "json", "yaml"}
-    ):
+    )
+    if hub_result:
         return hub_result
     else:
         return _load_prompt_from_file(path)

@@ -72,7 +72,8 @@ class QueryPowerBITool(BaseTool):
         **kwargs: Any,
     ) -> str:
         """Execute the query, return the results or an error message."""
-        if cache := self._check_cache(tool_input):
+        cache = self._check_cache(tool_input)
+        if cache:
             return cache
 
         try:
@@ -113,7 +114,8 @@ class QueryPowerBITool(BaseTool):
         **kwargs: Any,
     ) -> str:
         """Execute the query, return the results or an error message."""
-        if cache := self._check_cache(tool_input):
+        cache = self._check_cache(tool_input)
+        if cache:
             return cache
         try:
             query = await self.llm_chain.apredict(
