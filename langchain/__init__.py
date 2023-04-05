@@ -1,6 +1,6 @@
 """Main entrypoint into package."""
 
-from importlib import metadata
+# from importlib import metadata
 from typing import Optional
 
 from langchain.agents import MRKLChain, ReActChain, SelfAskWithSearchChain
@@ -55,8 +55,8 @@ from langchain.utilities.wikipedia import WikipediaAPIWrapper
 from langchain.utilities.wolfram_alpha import WolframAlphaAPIWrapper
 from langchain.vectorstores import FAISS, ElasticVectorSearch
 
-__version__ = metadata.version(__package__)
-del metadata  # optional, avoids polluting the results of dir(__package__)
+# __version__ = metadata.version(__package__)
+# del metadata  # optional, avoids polluting the results of dir(__package__)
 
 verbose: bool = False
 llm_cache: Optional[BaseCache] = None

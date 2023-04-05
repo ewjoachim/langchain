@@ -1,5 +1,5 @@
 """Wrapper around HuggingFace embedding models for self-hosted remote hardware."""
-import importlib
+# import importlib
 import logging
 from typing import Any, Callable, List, Optional
 
@@ -35,25 +35,25 @@ def load_embedding_model(model_id: str, instruct: bool = False, device: int = 0)
 
         client = INSTRUCTOR(model_id)
 
-    if importlib.util.find_spec("torch") is not None:
-        import torch
+    # if importlib.util.find_spec("torch") is not None:
+    #     import torch
 
-        cuda_device_count = torch.cuda.device_count()
-        if device < -1 or (device >= cuda_device_count):
-            raise ValueError(
-                f"Got device=={device}, "
-                f"device is required to be within [-1, {cuda_device_count})"
-            )
-        if device < 0 and cuda_device_count > 0:
-            logger.warning(
-                "Device has %d GPUs available. "
-                "Provide device={deviceId} to `from_model_id` to use available"
-                "GPUs for execution. deviceId is -1 for CPU and "
-                "can be a positive integer associated with CUDA device id.",
-                cuda_device_count,
-            )
+    #     cuda_device_count = torch.cuda.device_count()
+    #     if device < -1 or (device >= cuda_device_count):
+    #         raise ValueError(
+    #             f"Got device=={device}, "
+    #             f"device is required to be within [-1, {cuda_device_count})"
+    #         )
+    #     if device < 0 and cuda_device_count > 0:
+    #         logger.warning(
+    #             "Device has %d GPUs available. "
+    #             "Provide device={deviceId} to `from_model_id` to use available"
+    #             "GPUs for execution. deviceId is -1 for CPU and "
+    #             "can be a positive integer associated with CUDA device id.",
+    #             cuda_device_count,
+    #         )
 
-        client = client.to(device)
+    #     client = client.to(device)
     return client
 
 
