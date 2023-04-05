@@ -8,11 +8,13 @@ from langchain.vectorstores.deeplake import DeepLake
 from langchain.vectorstores.docarray import DocArrayHnswSearch, DocArrayInMemorySearch
 from langchain.vectorstores.elastic_vector_search import ElasticVectorSearch
 from langchain.vectorstores.faiss import FAISS
-from langchain.vectorstores.lancedb import LanceDB
+
+# from langchain.vectorstores.lancedb import LanceDB
 from langchain.vectorstores.milvus import Milvus
 from langchain.vectorstores.myscale import MyScale, MyScaleSettings
 from langchain.vectorstores.opensearch_vector_search import OpenSearchVectorSearch
-from langchain.vectorstores.pinecone import Pinecone
+
+# from langchain.vectorstores.pinecone import Pinecone
 from langchain.vectorstores.qdrant import Qdrant
 from langchain.vectorstores.redis import Redis
 from langchain.vectorstores.supabase import SupabaseVectorStore
@@ -27,7 +29,7 @@ __all__ = [
     "ElasticVectorSearch",
     "FAISS",
     "VectorStore",
-    "Pinecone",
+    # "Pinecone",
     "Weaviate",
     "Qdrant",
     "Milvus",
@@ -43,7 +45,7 @@ __all__ = [
     "AnalyticDB",
     "Vectara",
     "Tair",
-    "LanceDB",
+    # "LanceDB",
     "DocArrayHnswSearch",
     "DocArrayInMemorySearch",
     "Typesense",
