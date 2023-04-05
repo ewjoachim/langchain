@@ -11,11 +11,10 @@ from typing import (
     Collection,
     Iterable,
     List,
-    Literal,
     Optional,
     Union,
 )
-
+from typing_extensions import Literal
 from langchain.docstore.document import Document
 
 logger = logging.getLogger()

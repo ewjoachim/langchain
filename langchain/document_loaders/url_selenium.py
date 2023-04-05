@@ -1,7 +1,8 @@
 """Loader that uses Selenium to load a page, then uses unstructured to load the html.
 """
 import logging
-from typing import TYPE_CHECKING, List, Literal, Optional, Union
+from typing import TYPE_CHECKING, List, Optional, Union
+from typing_extensions import Literal
 
 if TYPE_CHECKING:
     from selenium.webdriver import Chrome, Firefox

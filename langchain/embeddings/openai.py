@@ -7,13 +7,12 @@ from typing import (
     Callable,
     Dict,
     List,
-    Literal,
     Optional,
     Set,
     Tuple,
     Union,
 )
-
+from typing_extensions import Literal
 import numpy as np
 from pydantic import BaseModel, Extra, root_validator
 from tenacity import (
