@@ -1,3 +1,23 @@
+# This is my Langchain fork
+
+- Why did we do the fork: to make it Py3.7 compatible
+- Where is upstream: [hwchase17/langchain](https://github.com/hwchase17/langchain)
+- What did we do in the fork: remove some incompatible libs and fix the py3.8+-specific syntax.
+- When can we drop the fork: When we're using a version Langchain supports.
+- What version did we fork: a commit on master after 0.0.137
+- How to update the fork:
+   - rebase this on upstream's master
+   - fix conflicts
+   - run `poetry env use 3.7`
+   - run `poetry lock`. It will likely fail due to new libs being incompatible with
+     Py3.7. Try to remove those (either by commenting or rewriting the corresponding
+     code)
+   - for each commit, do a new search to see if new incompatible constructs were
+     introduced. If so, fix them.
+   - run `poetry shell` and try importing langchain. If it fails find why and fix.
+   - push to a branch
+   - update the version used in our main repo and test the new version.
+
 # 🦜️🔗 LangChain
 
 ⚡ Building applications with LLMs through composability ⚡
