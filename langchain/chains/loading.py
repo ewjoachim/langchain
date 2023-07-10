@@ -539,9 +539,10 @@ def load_chain_from_config(config: dict, **kwargs: Any) -> Chain:
 
 def load_chain(path: Union[str, Path], **kwargs: Any) -> Chain:
     """Unified method for loading a chain from LangChainHub or local fs."""
-    if hub_result := try_load_from_hub(
+    hub_result = try_load_from_hub(
         path, _load_chain_from_file, "chains", {"json", "yaml"}, **kwargs
-    ):
+    )
+    if hub_result:
         return hub_result
     else:
         return _load_chain_from_file(path, **kwargs)

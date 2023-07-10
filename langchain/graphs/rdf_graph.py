@@ -124,7 +124,8 @@ class RdfGraph:
                 "Could not import rdflib python package. "
                 "Please install it with `pip install rdflib`."
             )
-        if self.standard not in (supported_standards := ("rdf", "rdfs", "owl")):
+        supported_standards = ("rdf", "rdfs", "owl")
+        if self.standard not in (supported_standards):
             raise ValueError(
                 f"Invalid standard. Supported standards are: {supported_standards}."
             )

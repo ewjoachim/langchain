@@ -141,7 +141,8 @@ class Qdrant(VectorStore):
         texts_iterator = iter(texts)
         metadatas_iterator = iter(metadatas or [])
         ids_iterator = iter(ids or [uuid.uuid4().hex for _ in iter(texts)])
-        while batch_texts := list(islice(texts_iterator, batch_size)):
+        batch_texts = list(islice(texts_iterator, batch_size))
+        while batch_texts:
             # Take the corresponding metadata and id for each text in a batch
             batch_metadatas = list(islice(metadatas_iterator, batch_size)) or None
             batch_ids = list(islice(ids_iterator, batch_size))
@@ -167,6 +168,8 @@ class Qdrant(VectorStore):
             self.client.upsert(collection_name=self.collection_name, points=points)
 
             added_ids.extend(batch_ids)
+
+            batch_texts = list(islice(texts_iterator, batch_size))
 
         return added_ids
 
@@ -692,7 +695,8 @@ class Qdrant(VectorStore):
         texts_iterator = iter(texts)
         metadatas_iterator = iter(metadatas or [])
         ids_iterator = iter(ids or [uuid.uuid4().hex for _ in iter(texts)])
-        while batch_texts := list(islice(texts_iterator, batch_size)):
+        batch_texts = list(islice(texts_iterator, batch_size))
+        while batch_texts:
             # Take the corresponding metadata and id for each text in a batch
             batch_metadatas = list(islice(metadatas_iterator, batch_size)) or None
             batch_ids = list(islice(ids_iterator, batch_size))
@@ -716,6 +720,7 @@ class Qdrant(VectorStore):
             )
 
             client.upsert(collection_name=collection_name, points=points)
+            batch_texts = list(islice(texts_iterator, batch_size))
 
         return cls(
             client=client,

@@ -17,7 +17,10 @@ def _default_meta_function(meta: dict, _content: Any) -> dict:
 
 def _batch_block(iterable: Iterable, size: int) -> Generator[List[dict], None, None]:
     it = iter(iterable)
-    while item := list(itertools.islice(it, size)):
+    while True:
+        item = list(itertools.islice(it, size))
+        if not item:
+            break
         yield item
 
 
@@ -89,9 +92,9 @@ class SitemapLoader(WebBaseLoader):
 
             els.append(
                 {
-                    tag: prop.text
+                    tag: url.find(tag).text
                     for tag in ["loc", "lastmod", "changefreq", "priority"]
-                    if (prop := url.find(tag))
+                    if url.find(tag)
                 }
             )
 

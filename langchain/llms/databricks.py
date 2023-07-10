@@ -114,7 +114,8 @@ def get_default_api_token() -> str:
     """Gets the default Databricks personal access token.
     Raises an error if the token cannot be automatically determined.
     """
-    if api_token := os.getenv("DATABRICKS_TOKEN"):
+    api_token = os.getenv("DATABRICKS_TOKEN")
+    if api_token:
         return api_token
     try:
         api_token = get_repl_context().apiToken
@@ -241,7 +242,8 @@ class Databricks(LLM):
             return v
         else:
             try:
-                if v := get_repl_context().clusterId:
+                v = get_repl_context().clusterId
+                if v:
                     return v
                 raise ValueError("Context doesn't contain clusterId.")
             except Exception as e:

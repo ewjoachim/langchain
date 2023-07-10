@@ -73,7 +73,8 @@ class QueryPowerBITool(BaseTool):
         **kwargs: Any,
     ) -> str:
         """Execute the query, return the results or an error message."""
-        if cache := self._check_cache(tool_input):
+        cache = self._check_cache(tool_input)
+        if cache:
             logger.debug("Found cached result for %s: %s", tool_input, cache)
             return cache
 
@@ -126,9 +127,10 @@ class QueryPowerBITool(BaseTool):
         **kwargs: Any,
     ) -> str:
         """Execute the query, return the results or an error message."""
-        if cache := self._check_cache(tool_input):
+        cache = self._check_cache(tool_input)
+        if cache:
             logger.debug("Found cached result for %s: %s", tool_input, cache)
-            return f"{cache}, from cache, you have already asked this question."
+            return cache
         try:
             logger.info("Running PBI Query Tool with input: %s", tool_input)
             query = await self.llm_chain.apredict(

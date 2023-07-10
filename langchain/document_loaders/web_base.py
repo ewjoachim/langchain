@@ -27,11 +27,14 @@ default_header_template = {
 def _build_metadata(soup: Any, url: str) -> dict:
     """Build metadata from BeautifulSoup output."""
     metadata = {"source": url}
-    if title := soup.find("title"):
+    title = soup.find("title")
+    if title:
         metadata["title"] = title.get_text()
-    if description := soup.find("meta", attrs={"name": "description"}):
+    description = soup.find("meta", attrs={"name": "description"})
+    if description:
         metadata["description"] = description.get("content", None)
-    if html := soup.find("html"):
+    html = soup.find("html")
+    if html:
         metadata["language"] = html.get("lang", None)
     return metadata
 

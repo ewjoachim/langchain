@@ -254,7 +254,8 @@ class BlackboardLoader(WebBaseLoader):
         Returns:
             The filename.
         """
-        if (url_path := Path(url)) and url_path.suffix == ".pdf":
+        url_path = Path(url)
+        if url_path and url_path.suffix == ".pdf":
             return url_path.name
         else:
             return self._parse_filename_from_url(url)
