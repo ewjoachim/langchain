@@ -8,7 +8,7 @@ import os
 # from importlib.metadata import version
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
-from packaging.version import parse
+# from packaging.version import parse
 from requests import HTTPError, Response
 
 
