@@ -18,8 +18,8 @@ from typing import (
     Union,
 )
 
-from langchainplus_sdk import LangChainPlusClient, RunEvaluator
-from langchainplus_sdk.schemas import Example
+# from langchainplus_sdk import LangChainPlusClient, RunEvaluator
+# from langchainplus_sdk.schemas import Example
 
 from langchain.callbacks.base import BaseCallbackHandler
 from langchain.callbacks.manager import Callbacks
@@ -191,6 +191,10 @@ async def _arun_llm(
     return llm_output
 
 
+class Example:
+    pass
+
+
 async def _arun_llm_or_chain(
     example: Example,
     llm_or_chain_factory: MODEL_OR_CHAIN_FACTORY,
@@ -302,6 +306,14 @@ async def _gather_with_concurrency(
             if isinstance(callback, (LangChainTracer, EvaluatorCallbackHandler)):
                 callback.wait_for_futures()
     return results
+
+
+class LangChainPlusClient:
+    pass
+
+
+class RunEvaluator:
+    pass
 
 
 async def _callbacks_initializer(

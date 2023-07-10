@@ -8,7 +8,7 @@ from datetime import datetime
 from typing import Any, Dict, List, Optional, Set, Union
 from uuid import UUID
 
-from langchainplus_sdk import LangChainPlusClient
+# from langchainplus_sdk import LangChainPlusClient
 
 from langchain.callbacks.tracers.base import BaseTracer
 from langchain.callbacks.tracers.schemas import Run, RunTypeEnum, TracerSession
@@ -35,6 +35,10 @@ def wait_for_all_tracers() -> None:
     global _TRACERS
     for tracer in _TRACERS:
         tracer.wait_for_futures()
+
+
+class LangChainPlusClient:
+    object
 
 
 class LangChainTracer(BaseTracer):

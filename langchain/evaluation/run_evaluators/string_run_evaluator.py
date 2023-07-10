@@ -4,8 +4,8 @@ from __future__ import annotations
 from abc import abstractmethod
 from typing import Any, Dict, List, Optional, Union
 
-from langchainplus_sdk import EvaluationResult, RunEvaluator
-from langchainplus_sdk.schemas import Example, Run
+# from langchainplus_sdk import EvaluationResult, RunEvaluator
+# from langchainplus_sdk.schemas import Example, Run
 
 from langchain.base_language import BaseLanguageModel
 from langchain.callbacks.manager import (
@@ -20,6 +20,22 @@ from langchain.load.serializable import Serializable
 from langchain.schema import RUN_KEY, messages_from_dict
 from langchain.schema.messages import BaseMessage, get_buffer_string
 from langchain.tools.base import Tool
+
+
+class EvaluationResult:
+    pass
+
+
+class RunEvaluator:
+    pass
+
+
+class Example:
+    pass
+
+
+class Run:
+    pass
 
 
 def _get_messages_from_run_dict(messages: List[dict]) -> List[BaseMessage]:

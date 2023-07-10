@@ -1,7 +1,7 @@
 from typing import Any, Dict, Mapping, Optional, Sequence, Union
 
-from langchainplus_sdk.evaluation import EvaluationResult
-from langchainplus_sdk.schemas import Example, Run, RunTypeEnum
+# from langchainplus_sdk.evaluation import EvaluationResult
+# from langchainplus_sdk.schemas import Example, Run, RunTypeEnum
 from pydantic import BaseModel, Field
 
 from langchain.chat_models.base import BaseChatModel
@@ -30,6 +30,22 @@ _QA_PROMPTS = {
     "qa": QA_DEFAULT_PROMPT,
     "sql": SQL_PROMPT,
 }
+
+
+class EvaluationResult:
+    pass
+
+
+class Example:
+    pass
+
+
+class Run:
+    pass
+
+
+class RunTypeEnum:
+    pass
 
 
 class StringRunEvaluatorInputMapper(RunEvaluatorInputMapper, BaseModel):

@@ -4,13 +4,21 @@ from concurrent.futures import Future, ThreadPoolExecutor, wait
 from typing import Any, Optional, Sequence, Set, Union
 from uuid import UUID
 
-from langchainplus_sdk import LangChainPlusClient, RunEvaluator
+# from langchainplus_sdk import LangChainPlusClient, RunEvaluator
 
 from langchain.callbacks.manager import tracing_v2_enabled
 from langchain.callbacks.tracers.base import BaseTracer
 from langchain.callbacks.tracers.schemas import Run
 
 logger = logging.getLogger(__name__)
+
+
+class LangChainPlusClient:
+    pass
+
+
+class RunEvaluator:
+    pass
 
 
 class EvaluatorCallbackHandler(BaseTracer):
