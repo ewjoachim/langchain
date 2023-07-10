@@ -10,9 +10,10 @@ from typing import (
     Optional,
     Set,
     Tuple,
-    TypedDict,
     Union,
 )
+from typing_extensions import TypedDict
+
 
 if TYPE_CHECKING:
     from playwright.sync_api import Browser, CDPSession, Page, sync_playwright

@@ -1,5 +1,6 @@
 """Load question answering chains."""
-from typing import Any, Mapping, Optional, Protocol
+from typing import Any, Mapping, Optional
+from typing_extensions import Protocol
 
 from langchain.callbacks.base import BaseCallbackManager
 from langchain.callbacks.manager import Callbacks

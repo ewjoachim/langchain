@@ -1,7 +1,8 @@
 """Load question answering with sources chains."""
 from __future__ import annotations
 
-from typing import Any, Mapping, Optional, Protocol
+from typing import Any, Mapping, Optional
+from typing_extensions import Protocol
 
 from langchain.chains.combine_documents.base import BaseCombineDocumentsChain
 from langchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain

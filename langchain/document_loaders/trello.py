@@ -1,7 +1,8 @@
 """Loader that loads cards from Trello"""
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any, List, Literal, Optional, Tuple
+from typing import TYPE_CHECKING, Any, List, Optional, Tuple
+from typing_extensions import Literal
 
 from langchain.docstore.document import Document
 from langchain.document_loaders.base import BaseLoader

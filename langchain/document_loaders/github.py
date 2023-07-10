@@ -1,6 +1,7 @@
 from abc import ABC
 from datetime import datetime
-from typing import Dict, Iterator, List, Literal, Optional, Union
+from typing import Dict, Iterator, List, Optional, Union
+from typing_extensions import Literal
 
 import requests
 from pydantic import BaseModel, root_validator, validator

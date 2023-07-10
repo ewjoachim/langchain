@@ -7,7 +7,9 @@ import json
 import math
 import os
 from abc import ABC, abstractmethod
-from typing import Any, Dict, Iterable, List, Literal, Optional, Tuple, Type
+from typing import Any, Dict, Iterable, List, Optional, Tuple, Type
+from typing_extensions import Literal
+
 from uuid import uuid4
 
 from langchain.docstore.document import Document

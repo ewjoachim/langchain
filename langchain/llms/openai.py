@@ -12,13 +12,13 @@ from typing import (
     Dict,
     Generator,
     List,
-    Literal,
     Mapping,
     Optional,
     Set,
     Tuple,
     Union,
 )
+from typing_extensions import Literal
 
 from pydantic import Field, root_validator
 

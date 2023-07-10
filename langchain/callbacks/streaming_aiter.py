@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 import asyncio
-from typing import Any, AsyncIterator, Dict, List, Literal, Union, cast
+from typing import Any, AsyncIterator, Dict, List, Union, cast
+from typing_extensions import Literal
 
 from langchain.callbacks.base import AsyncCallbackHandler
 from langchain.schema import LLMResult

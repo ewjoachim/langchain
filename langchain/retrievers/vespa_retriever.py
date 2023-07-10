@@ -3,7 +3,8 @@
 from __future__ import annotations
 
 import json
-from typing import TYPE_CHECKING, Any, Dict, List, Literal, Optional, Sequence, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Sequence, Union
+from typing_extensions import Literal
 
 from langchain.callbacks.manager import (
     AsyncCallbackManagerForRetrieverRun,

@@ -15,17 +15,15 @@ from typing import (
     Dict,
     Iterable,
     List,
-    Literal,
     Optional,
     Sequence,
     Tuple,
     Type,
-    TypedDict,
     TypeVar,
     Union,
     cast,
 )
-
+from typing_extensions import Literal, TypedDict
 from langchain.docstore.document import Document
 from langchain.schema import BaseDocumentTransformer
 

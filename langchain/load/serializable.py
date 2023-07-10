@@ -1,5 +1,8 @@
 from abc import ABC
-from typing import Any, Dict, List, Literal, TypedDict, Union, cast
+from typing import Any, Dict, List, Union, cast
+from typing_extensions import Literal
+from typing_extensions import TypedDict
+
 
 from pydantic import BaseModel, PrivateAttr
 

@@ -1,5 +1,6 @@
 import re
-from typing import Any, Dict, List, Literal, Optional
+from typing import Any, Dict, List, Optional
+from typing_extensions import Literal
 
 from pydantic import BaseModel, Extra, root_validator
 

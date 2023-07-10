@@ -8,9 +8,9 @@ from typing import (
     List,
     Optional,
     Sequence,
-    TypedDict,
     Union,
 )
+from typing_extensions import TypedDict
 
 from langchain.callbacks.tracers.base import BaseTracer
 from langchain.callbacks.tracers.schemas import Run, RunTypeEnum

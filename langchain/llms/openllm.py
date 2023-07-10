@@ -9,12 +9,13 @@ from typing import (
     Any,
     Dict,
     List,
-    Literal,
     Optional,
-    TypedDict,
     Union,
     overload,
 )
+from typing_extensions import Literal
+from typing_extensions import TypedDict
+
 
 from pydantic import PrivateAttr
 
@@ -87,7 +88,7 @@ class OpenLLM(LLM):
     server_type: ServerType = "http"
     """Optional server type. Either 'http' or 'grpc'."""
     embedded: bool = True
-    """Initialize this LLM instance in current process by default. Should 
+    """Initialize this LLM instance in current process by default. Should
     only set to False when using in conjunction with BentoML Service."""
     llm_kwargs: Dict[str, Any]
     """Key word arguments to be passed to openllm.LLM"""

@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
-from typing import Any, Callable, List, Optional, Protocol, Tuple
+from typing import Any, Callable, List, Optional, Tuple
+
+from typing_extensions import Protocol
 
 from pydantic import Extra
 
